@@ -108,7 +108,7 @@ export function DesktopNavigation() {
         <div className="flex items-center justify-between">
           {!isCollapsed && (
             <div>
-              <h2 className="font-bold text-lg text-primary">MedAssist</h2>
+              <h2 className="font-bold text-lg text-primary">MediCare+</h2>
               <p className="text-xs text-muted-foreground">AI Diagnostic Tool</p>
             </div>
           )}
