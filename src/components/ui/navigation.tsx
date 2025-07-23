@@ -9,7 +9,9 @@ import {
   User, 
   Activity,
   Menu,
-  X
+  X,
+  Calendar,
+  PieChart
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -41,6 +43,19 @@ const navItems = [
     description: "Patient Management" 
   },
   { 
+    icon: Calendar, 
+    label: "Appointments", 
+    path: "/appointments", 
+    description: "Schedule Management" 
+  },
+  { 
+    icon: PieChart, 
+    label: "Analytics", 
+    path: "/analytics", 
+    description: "Health Trends",
+    badge: "New" 
+  },
+  { 
     icon: Activity, 
     label: "Reports", 
     path: "/reports", 
@@ -60,7 +75,7 @@ export function MobileNavigation() {
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border z-40 lg:hidden">
       <div className="flex items-center justify-around px-2 py-1">
-        {navItems.slice(0, 5).map((item) => {
+        {[navItems[0], navItems[1], navItems[2], navItems[3], navItems[5]].map((item) => {
           const isActive = location.pathname === item.path;
           
           return (

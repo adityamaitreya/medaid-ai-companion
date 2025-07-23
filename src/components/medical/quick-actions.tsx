@@ -6,7 +6,9 @@ import {
   UserPlus, 
   MessageSquare, 
   Heart,
-  Thermometer
+  Thermometer,
+  Calendar,
+  PieChart
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -36,10 +38,10 @@ export function QuickActions() {
       variant: "outline" as const
     },
     {
-      icon: MessageSquare,
-      label: "Consult Specialist",
-      description: "Connect with expert doctor",
-      onClick: () => {}, // Will implement telemedicine later
+      icon: Calendar,
+      label: "Appointments",
+      description: "Schedule patient visits",
+      onClick: () => navigate("/appointments"),
       variant: "outline" as const
     },
     {
@@ -47,6 +49,20 @@ export function QuickActions() {
       label: "Vital Signs",
       description: "Record patient vitals",
       onClick: () => navigate("/voice"),
+      variant: "outline" as const
+    },
+    {
+      icon: PieChart,
+      label: "Health Analytics",
+      description: "View patient health trends",
+      onClick: () => navigate("/analytics"),
+      variant: "outline" as const
+    },
+    {
+      icon: MessageSquare,
+      label: "Consult Specialist",
+      description: "Connect with expert doctor",
+      onClick: () => {}, // Will implement telemedicine later
       variant: "outline" as const
     },
     {
@@ -64,7 +80,7 @@ export function QuickActions() {
         <CardTitle className="text-lg">Quick Actions</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {actions.map((action, index) => (
             <Button
               key={index}
